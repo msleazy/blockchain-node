@@ -23,8 +23,8 @@ def obtener_cadena():
         logger.info(f"📦 Cadena solicitada: {len(cadena)} bloques")
         
         return jsonify({
-            "cadena": cadena,
-            "longitud": len(cadena)
+            "chain": cadena,
+            "length": len(cadena)
         }), 200
     
     except Exception as e:

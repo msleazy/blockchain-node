@@ -32,11 +32,13 @@ def create_app():
     from app.routes.transactions import transactions_bp
     from app.routes.mine import mine_bp
     from app.routes.nodes import nodes_bp
+    from app.routes.genesis import genesis_bp
     
     app.register_blueprint(chain_bp)
     app.register_blueprint(transactions_bp)
     app.register_blueprint(mine_bp)
     app.register_blueprint(nodes_bp)
+    app.register_blueprint(genesis_bp)
     
     # Ruta de health check
     @app.route("/health")
@@ -44,3 +46,4 @@ def create_app():
         return {"status": "ok", "node": os.getenv("NODE_ID", "nodo")}, 200
     
     return app
+
