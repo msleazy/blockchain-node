@@ -75,8 +75,8 @@ def resolver_conflictos():
                 
                 if resp.status_code == 200:
                     data = resp.json()
-                    cadena_remota = data.get("cadena", [])
-                    longitud_remota = data.get("longitud", 0)
+                    cadena_remota = data.get("chain", [])
+                    longitud_remota = data.get("lenght", 0)
                     
                     logger.info(f"🔍 Nodo {url_nodo}: {longitud_remota} bloques")
                     
